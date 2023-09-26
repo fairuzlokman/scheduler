@@ -7,8 +7,8 @@ const Home = () => {
 		<div className="flex flex-col h-screen gap-5 p-10">
 			<p className="text-3xl font-semibold capitalize">scheduler</p>
 			{/* <Scheduler/> */}
-			{/* <WeekDisplay/> */}
-			<MyCalendar/>
+			<WeekDisplay/>
+			{/* <MyCalendar/> */}
 		</div>
 	)
 }

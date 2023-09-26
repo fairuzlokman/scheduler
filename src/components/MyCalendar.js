@@ -6,6 +6,23 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { parseISO, format } from 'date-fns';
 
 const MyCalendar = () => {
+    const otherEvents = [
+        {
+            title: 'My title',
+            start: '2023-09-26T10:00:00',
+            end: '2023-09-26T12:00:00',
+        },
+        {
+            title: 'My title',
+            start: '2023-09-26T14:00:00',
+            end: '2023-09-26T16:00:00',
+        },
+        {
+            title: 'My title',
+            start: '2023-09-24T10:00:00',
+            end: '2023-09-24T12:00:00',
+        },
+    ]
     const [eventDetails, setEventDetails] = useState({
         title: '+ New interview',
         start: '',
@@ -83,20 +100,25 @@ const MyCalendar = () => {
                 </select>
             </label>
             <FullCalendar
-                plugins={[timeGridPlugin, interactionPlugin, dayGridPlugin]}
+                plugins={[timeGridPlugin, interactionPlugin]}
                 initialView={'timeGridWeek'}
                 headerToolbar={{
                     start: 'title',
                     center: '',
                     end: 'prev,next',
                 }}
-                height={'90vh'}
+                height={'180vh'}
                 selectable={true}
                 // editable={true} // only for new event
-                slotDuration={'00:30:00'}
+                slotDuration={'01:00:00'}
                 allDaySlot={false}
                 select={handleSelect}
-                events={[eventDetails]}
+                events={[eventDetails, ...otherEvents]}
+                eventBackgroundColor='#E6F6F6'
+                eventBorderColor='#09A3A9'
+                eventTextColor='#09A3A9'
+                eventClassNames={'text-[12px] p-2 text-truncate'}
+                displayEventTime={false}
             />
         </div>
     );
