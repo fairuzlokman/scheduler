@@ -118,13 +118,13 @@ const WeekDisplay = () => {
                     onClick={handlePrevWeekClick}
                     className="px-2 py-1 text-white bg-blue-500 rounded"
                 >
-                    Previous Week
+                    &lt; Previous Week
                 </button>
                 <button
                     onClick={handleNextWeekClick}
                     className="px-2 py-1 text-white bg-blue-500 rounded"
                 >
-                    Next Week
+                    Next Week &gt;
                 </button>
             </div>
             <div className="grid grid-cols-7">
